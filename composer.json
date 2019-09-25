@@ -1,0 +1,8 @@
+{
+    "name": "krokodilushka/php-yandex-collections-api",
+    "description": "API сервиса Яндекс.Коллекции",
+    "require": {
+        "php": ">=7.3",
+        "guzzlehttp/guzzle": "~6.0"
+    }
+}
