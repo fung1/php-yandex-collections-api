@@ -1,14 +1,15 @@
 # API сервиса Яндекс.Коллекции
 Простенькая обертка для вызовов API сервиса Яндекс.Коллекции (https://yandex.ru/collections/)
-
+  
 ## Установка
-Нужен PHP 7.3+
-Установка с помощью Composer:
-composer require krokodilushka/php-yandex-collections-api
-
+Нужен PHP 7.3+  
+Установка с помощью Composer:  
+composer require krokodilushka/php-yandex-collections-api  
+  
 ## Пример
-Нужен OAuth токен (https://yandex.ru/dev/collections/doc/concepts/access-docpage/)
-Отладочный токен можно получить таким образом: https://oauth.yandex.ru/authorize?response_type=token&client_id=<APP_ID>
+Нужен OAuth токен (https://yandex.ru/dev/collections/doc/concepts/access-docpage/)  
+Отладочный токен можно получить таким образом: https://oauth.yandex.ru/authorize?response_type=token&client_id=<APP_ID>  
+  
     <?php
     require_once __DIR__ . '/vendor/autoload.php';
     
@@ -27,5 +28,6 @@ composer require krokodilushka/php-yandex-collections-api
         echo "http code:" . $e->getCode() . "\n";
         echo $e->getResponse()->getBody();
     }
-    ?>
-    Остальные примеры есть в файле examples.php
+    ?>  
+    
+Остальные примеры есть в файле examples.php
