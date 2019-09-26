@@ -6,7 +6,7 @@ PHP 7.3+
   
 ## Установка
 Установка с помощью Composer:  
-composer require krokodilushka/php-yandex-collections-api  
+    composer require krokodilushka/php-yandex-collections-api  
   
 ## Пример
 Нужен OAuth токен (https://yandex.ru/dev/collections/doc/concepts/access-docpage/)  
