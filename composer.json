@@ -1,8 +1,15 @@
 {
-    "name": "krokodilushka/php-yandex-collections-api",
+    "name": "krokodilushka/yandex-collections-api",
     "description": "API сервиса Яндекс.Коллекции",
+    "type": "library",
     "require": {
-        "php": ">=7.3",
-        "guzzlehttp/guzzle": "~6.0"
-    }
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "authors": [
+        {
+            "name": "Krokodilushka",
+            "email": "webmaster-krokodil@protonmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
 }
