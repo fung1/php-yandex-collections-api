@@ -1,14 +1,13 @@
 <?php
 
+namespace YandexCollectionsAPI;
+
 /**
  * API сервиса Яндекс.Коллекции
  *
  * @author Krokodilushka
  * @link https://github.com/Krokodilushka/php-yandex-collections-api
  */
-
-namespace YandexCollectionsAPI;
-
 require_once __DIR__ . '/Data/Content.php';
 
 class YandexCollectionsAPI {

@@ -1,7 +1,6 @@
 <?php
 
 require_once 'vendor/autoload.php';
-require_once 'src/YandexCollectionsAPI.php';
 
 // О получении токена: https://yandex.ru/dev/collections/doc/concepts/access-docpage/
 // Отладочный токен можно получить таким образом: https://oauth.yandex.ru/authorize?response_type=token&client_id=<APP_ID>
