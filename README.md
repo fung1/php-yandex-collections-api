@@ -1,8 +1,10 @@
 # API сервиса Яндекс.Коллекции
 Простенькая обертка для вызовов API сервиса Яндекс.Коллекции (https://yandex.ru/collections/)
   
+## Требования  
+PHP 7.3+  
+  
 ## Установка
-Нужен PHP 7.3+  
 Установка с помощью Composer:  
 composer require krokodilushka/php-yandex-collections-api  
   
