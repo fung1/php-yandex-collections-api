@@ -5,12 +5,14 @@ require_once 'vendor/autoload.php';
 // О получении токена: https://yandex.ru/dev/collections/doc/concepts/access-docpage/
 // Отладочный токен можно получить таким образом: https://oauth.yandex.ru/authorize?response_type=token&client_id=<APP_ID>
 const OAUTH_TOKEN = 'token';
+// Имя компании, от которой публикуются коллекции
+const COMPANY_NAME = 'company@companyName';
 
 use YandexCollectionsAPI\YandexCollectionsAPI;
 use YandexCollectionsAPI\Data\Content;
 
 $httpClient = new \GuzzleHttp\Client();
-$yandexCollectionsAPI = new YandexCollectionsAPI($httpClient, OAUTH_TOKEN);
+$yandexCollectionsAPI = new YandexCollectionsAPI($httpClient, OAUTH_TOKEN, COMPANY_NAME);
 try {
     echo '<pre>';
     // доски

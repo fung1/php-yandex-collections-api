@@ -17,13 +17,14 @@ class YandexCollectionsAPI {
 
     /**
      * Класс для хранения объектов, через которые идет взаимодействие с API Яндекс коллекций
-     * 
+     *
      * @param \GuzzleHttp\Client $httpClient HTTP клиент для запросов к Яндекс API
      * @param string $token OAuth токен пользователя, от имени которого будут вызываться методы API {@link https://yandex.ru/dev/collections/doc/concepts/access-docpage/}
+     * @param string $companyName название компании, от имени которой публикуются коллекции
      */
-    public function __construct(\GuzzleHttp\Client $httpClient, string $token) {
-        $this->boards = new Boards($httpClient, $token);
-        $this->cards = new Cards($httpClient, $token);
+    public function __construct(\GuzzleHttp\Client $httpClient, string $token, string $companyName) {
+        $this->boards = new Boards($httpClient, $token, $companyName);
+        $this->cards = new Cards($httpClient, $token, $companyName);
     }
 
     /**
@@ -212,10 +213,12 @@ abstract class Base {
 
     protected $httpClient;
     protected $token;
+    protected $companyName;
 
-    public function __construct(\GuzzleHttp\Client $httpClient, string $token) {
+    public function __construct(\GuzzleHttp\Client $httpClient, string $token, string $companyName) {
         $this->httpClient = $httpClient;
         $this->token = $token;
+        $this->companyName = $companyName;
     }
 
     /**
@@ -233,6 +236,12 @@ abstract class Base {
         } else if ($httpMethod == 'POST' || $httpMethod == 'PATCH') {
             $params['headers']['Content-Type'] = 'application/json; charset=utf-8';
         }
+        if (array_key_exists('query', $params)) {
+            $params['query'] = array_merge(['as_company' => $this->companyName], $params['query']);
+        } else {
+            $params['query'] = ['as_company' => $this->companyName];
+        }
+
         $res = $this->httpClient->request($httpMethod, self::API_HOST . $apiMethod, $params);
         if ($res->getStatusCode() == 204) {
             return true;

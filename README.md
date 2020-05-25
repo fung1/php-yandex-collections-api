@@ -9,16 +9,19 @@ PHP 7.3+
     composer require krokodilushka/php-yandex-collections-api:dev-master  
   
 ## Пример
-Нужен OAuth токен (https://yandex.ru/dev/collections/doc/concepts/access-docpage/)  
-Отладочный токен можно получить таким образом: https://oauth.yandex.ru/authorize?response_type=token&client_id=<APP_ID>  
+Нужен OAuth токен (https://yandex.ru/dev/collections/doc/concepts/access-docpage/).  
+Отладочный токен можно получить таким образом: https://oauth.yandex.ru/authorize?response_type=token&client_id=<APP_ID>.  
+Также необходимо указать имя компании, которое можно увидеть в URL после user/: https://yandex.ru/collections/user/company%40your-company/ (здесь имя компании: company@your-company).  
   
     <?php
     require_once __DIR__ . '/vendor/autoload.php';
     
     const OAUTH_TOKEN = 'token';
+    // Имя компании, от которой публикуются коллекции
+    const COMPANY_NAME = 'company@companyName';
 
     $httpClient = new \GuzzleHttp\Client();
-    $yandexCollectionsAPI = new YandexCollectionsAPI\YandexCollectionsAPI($httpClient, OAUTH_TOKEN);
+    $yandexCollectionsAPI = new YandexCollectionsAPI\YandexCollectionsAPI($httpClient, OAUTH_TOKEN, COMPANY_NAME);
     
     try {
         $page = 1; // страница
