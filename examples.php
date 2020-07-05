@@ -15,7 +15,7 @@ use src\YandexCollectionsAPI;
 use src\Data\Content;
 
 $httpClient = new \GuzzleHttp\Client();
-$yandexCollectionsAPI = new YandexCollectionsAPI($httpClient, OAUTH_TOKEN, COMPANY_NAME);
+$yandexCollectionsAPI = new YandexCollectionsAPI($httpClient, $token, COMPANY_NAME);
 try {
     echo '<pre>';
     // доски
