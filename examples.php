@@ -7,7 +7,7 @@ require_once 'vendor/autoload.php';
 $token = getenv('token');
 
 //const OAUTH_TOKEN = $token;
-//print (OAUTH_TOKEN);
+print ($token);
 // Имя компании, от которой публикуются коллекции
 const COMPANY_NAME = 'company@companyName';
 
