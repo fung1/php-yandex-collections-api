@@ -9,8 +9,8 @@ print (OAUTH_TOKEN);
 // Имя компании, от которой публикуются коллекции
 const COMPANY_NAME = 'company@companyName';
 
-use YandexCollectionsAPI\YandexCollectionsAPI;
-use YandexCollectionsAPI\Data\Content;
+use src\YandexCollectionsAPI;
+use src\Data\Content;
 
 $httpClient = new \GuzzleHttp\Client();
 $yandexCollectionsAPI = new YandexCollectionsAPI($httpClient, OAUTH_TOKEN, COMPANY_NAME);
