@@ -11,8 +11,8 @@ $token = getenv('token');
 // Имя компании, от которой публикуются коллекции
 const COMPANY_NAME = 'company@companyName';
 
-use src\YandexCollectionsAPI;
-use src\Data\Content;
+use YandexCollectionsAPI\YandexCollectionsAPI;
+use YandexCollectionsAPI\Data\Content;
 
 $httpClient = new \GuzzleHttp\Client();
 $yandexCollectionsAPI = new YandexCollectionsAPI($httpClient, $token, COMPANY_NAME);
