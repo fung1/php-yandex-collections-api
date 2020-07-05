@@ -19,12 +19,13 @@ $yandexCollectionsAPI = new YandexCollectionsAPI($httpClient, $token, COMPANY_NA
 try {
     echo '<pre>';
     // доски
-    /*
+    
       // все доски
       $page = 1; // страница
       $pageSize = 10; // сколько выводить на одной странице. Максимум 100
       $list = $yandexCollectionsAPI->boards()->list($page, $pageSize);
       print_r($list);
+/*
       // подробнее об определенной доске
       $get = $yandexCollectionsAPI->boards()->get($list->results[0]->id);
       print_r($get);
@@ -40,7 +41,7 @@ try {
      */
 
     // карточки
-    
+    /*
       // все карточки определенной доски
       $page = 1; // страница
       $pageSize = 10; // сколько выводить на одной странице. Максимум 100
@@ -49,7 +50,6 @@ try {
       // подробнее об одной карточке
       $get = $yandexCollectionsAPI->cards()->get($list->results[0]->id);
       print_r($get);
-/*
       // добавить новую карточку
       $boardID = 'board_id'; // доска на которую добавить карточку
       $domain = 'browser.yandex.ru'; // домен, который будет отображаться на карточке
