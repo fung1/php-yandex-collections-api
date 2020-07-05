@@ -4,10 +4,11 @@ require_once 'vendor/autoload.php';
 
 // О получении токена: https://yandex.ru/dev/collections/doc/concepts/access-docpage/
 // Отладочный токен можно получить таким образом: https://oauth.yandex.ru/authorize?response_type=token&client_id=<APP_ID>
+
 $token = getenv('token');
 
 //const OAUTH_TOKEN = $token;
-print ($token);
+//print ($token);
 // Имя компании, от которой публикуются коллекции
 const COMPANY_NAME = 'company@companyName';
 
